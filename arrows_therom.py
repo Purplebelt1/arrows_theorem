@@ -131,7 +131,6 @@ while times_to_run >= 1:
                 if j != number_of_politicians-1:
                     temp_popularity_total = temp_politician_array[-1][0]
                 break
-        # print(voter_array[i])
 
 
     # This line tells it to go to the ranked_vote_counting() function to count the vote and do the
@@ -161,21 +160,16 @@ while times_to_run >= 1:
         if result == "TIE":
             result_numbers[0] = int(result_numbers[0]) + 1
             file_data[line_to_write] = f'{result_numbers[0]}:{result_numbers[1]}'
-            # print("TIE")
-            # print(f'{result_numbers[0] + 1}:{result_numbers[1]}\n')
             if times_to_run == 0:
                 print(f'{result_numbers[0]}:{result_numbers[1]}\n')
         else:
             result_numbers[1] = int(result_numbers[1]) + 1
             file_data[line_to_write] = f'{result_numbers[0]}:{result_numbers[1]}'
-            # print("WIN")
-            # print(f'{result_numbers[0]}:{result_numbers[1]+1}\n')
             if times_to_run == 0:
                 print(f'{result_numbers[0]}:{result_numbers[1]}')
         file_read_write = open("win_tie_record.txt", "w")
         file_read_write.writelines(file_data)
         file_read_write.close()
-        # print(10000-times_to_run)
 
 
 # Citation
