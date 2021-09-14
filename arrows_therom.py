@@ -2,15 +2,15 @@ import numpy
 import random
 
 # The number of voters who will vote in the election
-number_of_voters = 10000
+number_of_voters = 100
 # The number of politicians who will run in the election
-number_of_politicians = 10
+number_of_politicians = 5
 # Increasing this number with make some politicians more popular than others. If it's one then
 # everyone will have the same popularity, if it is 2 half will be less popular and half will be
 # more popular, if 3 then there are 3 states of popularity and so on.
 popularity_scale = 3
 # The number of times you want this simulation to run
-times_to_run = 10000
+times_to_run = 10
 
 
 # Setting up an array to act as a base to clone later
@@ -164,9 +164,9 @@ while times_to_run >= 1:
                 print(f'{result_numbers[0]}:{result_numbers[1]}\n')
         else:
             result_numbers[1] = int(result_numbers[1]) + 1
-            file_data[line_to_write] = f'{result_numbers[0]}:{result_numbers[1]}'
+            file_data[line_to_write] = f'{result_numbers[0]}:{result_numbers[1]}\n'
             if times_to_run == 0:
-                print(f'{result_numbers[0]}:{result_numbers[1]}')
+                print(f'{result_numbers[0]}:{result_numbers[1]}\n')
         file_read_write = open("win_tie_record.txt", "w")
         file_read_write.writelines(file_data)
         file_read_write.close()
